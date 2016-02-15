@@ -20,12 +20,12 @@ return(paste(a, b, c))}
 simulation <- function(n){
   simul <- replicate(n, game())
   simul <- simul == '0 1 1'
-  simul[simul] <- 205
+  simul[simul] <- 105
   simul[!simul] <- -100
   return(sum(simul))}
 
 #The monte carlot simulation, it plays a number of simulations of n games and save the profits in a vector.
-monte <- replicate(10000, simulation(100))
+monte <- replicate(100000, simulation(100))
 
 #The sample mean that estimate the Expected Value
 mean(monte)/100
